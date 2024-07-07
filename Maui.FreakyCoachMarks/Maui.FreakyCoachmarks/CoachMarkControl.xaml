@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView
+    x:Class="Maui.FreakyCoachMarks.CoachMarkControl"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    IsVisible="False">
+    <AbsoluteLayout x:Name="Layout" BackgroundColor="Transparent">
+        <Border
+            x:Name="MessageFrame"
+            Padding="10"
+            BackgroundColor="White">
+            <StackLayout>
+                <Label
+                    x:Name="MessageLabel"
+                    FontSize="16"
+                    TextColor="Black" />
+                <Button
+                    x:Name="NextButton"
+                    Clicked="OnNextButtonClicked"
+                    Text="Next" />
+            </StackLayout>
+        </Border>
+    </AbsoluteLayout>
+</ContentView>

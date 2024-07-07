@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using Maui.FreakyCoachMarks.Extensions;
+using Microsoft.Extensions.Logging;
 using SkiaSharp.Views.Maui.Controls.Hosting;
 
 namespace Samples
@@ -8,6 +9,7 @@ namespace Samples
         public static MauiApp CreateMauiApp()
         {
             var builder = MauiApp.CreateBuilder();
+            builder.UseFreakyCoachMarks();
             builder
                 .UseMauiApp<App>()
                 .UseSkiaSharp()
@@ -18,7 +20,7 @@ namespace Samples
                 });
 
 #if DEBUG
-    		builder.Logging.AddDebug();
+            builder.Logging.AddDebug();
 #endif
 
             return builder.Build();
