@@ -1,12 +1,12 @@
-﻿using System.ComponentModel;
+﻿using Maui.FreakyCoachMarks.Effects;
 using Microsoft.Maui.Controls.Platform;
 using Microsoft.Maui.Platform;
+using System.ComponentModel;
 using UIKit;
-using Maui.FreakyCoachMarks.Effects;
 
 namespace Maui.FreakyCoachMarks.Platforms.iOS;
 
-public class BlurPlatformEffect : PlatformEffect
+internal class BlurPlatformEffect : PlatformEffect
 {
     public BlurEffect VirtualEffect { get; private set; }
 

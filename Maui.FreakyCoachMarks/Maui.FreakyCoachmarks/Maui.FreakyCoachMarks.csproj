@@ -50,10 +50,14 @@
 		<Compile Remove="**\Windows\**\*.cs" />
 		<None Include="**\Windows\**\*.cs" Exclude="$(DefaultItemExcludes);$(DefaultExcludesInProjectFolder)" />
 	</ItemGroup>
-
 	<ItemGroup>
-		<MauiXaml Update="CoachMarkControl.xaml">
-			<Generator>MSBuild:Compile</Generator>
-		</MauiXaml>
+	  <Compile Update="FreakyCoachMarkView.xaml.cs">
+	    <DependentUpon>FreakyCoachMarkView.xaml</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+	<ItemGroup>
+	  <MauiXaml Update="FreakyCoachMarkView.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	</ItemGroup>
 </Project>

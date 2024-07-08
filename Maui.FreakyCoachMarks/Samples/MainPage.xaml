@@ -6,52 +6,11 @@
     xmlns:coach="clr-namespace:Maui.FreakyCoachMarks;assembly=Maui.FreakyCoachMarks"
     xmlns:local="clr-namespace:Maui.FreakyCoachMarks;assembly=Maui.FreakyCoachMarks"
     xmlns:this="clr-namespace:Samples">
-    <ContentPage.Resources>
-        <this:DoubleConverter x:Key="DoubleConverter" />
-    </ContentPage.Resources>
-    <AbsoluteLayout>
-        <!--  Your main content here  -->
-        <StackLayout
-            AbsoluteLayout.LayoutBounds="0.5,0.5,0.8,0.8"
-            AbsoluteLayout.LayoutFlags="All"
-            HorizontalOptions="Center"
-            VerticalOptions="Center">
-            <Button x:Name="FirstButton" Text="First Button" />
-            <Button
-                x:Name="SecondButton"
-                Margin="0,20,0,0"
-                Text="Second Button" />
-        </StackLayout>
-
-        <!--  CoachMarkControl  -->
-        <local:CoachMarkControl x:Name="coachMarkControl" IsVisible="False">
-            <local:CoachMarkControl.Steps>
-                <local:CoachMarkStep
-                    AbsoluteLayout.LayoutBounds="0.5, 0.9, 0.8, 0.1"
-                    AbsoluteLayout.LayoutFlags="All"
-                    HighlightHeight="{Binding Source={x:Reference FirstButton}, Path=Height, Converter={StaticResource DoubleConverter}}"
-                    HighlightWidth="{Binding Source={x:Reference FirstButton}, Path=Width, Converter={StaticResource DoubleConverter}}"
-                    HighlightX="{Binding Source={x:Reference FirstButton}, Path=Bounds.X, Converter={StaticResource DoubleConverter}}"
-                    HighlightY="{Binding Source={x:Reference FirstButton}, Path=Bounds.Y, Converter={StaticResource DoubleConverter}}"
-                    Message="This is the first button. Tap here to start."
-                    MessageHeight="0.1"
-                    MessageWidth="0.8"
-                    MessageX="0.5"
-                    MessageY="0.9" />
-
-                <local:CoachMarkStep
-                    AbsoluteLayout.LayoutBounds="0.5, 0.9, 0.8, 0.1"
-                    AbsoluteLayout.LayoutFlags="All"
-                    HighlightHeight="{Binding Source={x:Reference SecondButton}, Path=Height, Converter={StaticResource DoubleConverter}}"
-                    HighlightWidth="{Binding Source={x:Reference SecondButton}, Path=Width, Converter={StaticResource DoubleConverter}}"
-                    HighlightX="{Binding Source={x:Reference SecondButton}, Path=Bounds.X, Converter={StaticResource DoubleConverter}}"
-                    HighlightY="{Binding Source={x:Reference SecondButton}, Path=Bounds.Y, Converter={StaticResource DoubleConverter}}"
-                    Message="This is the second button. Tap here to continue."
-                    MessageHeight="0.1"
-                    MessageWidth="0.8"
-                    MessageX="0.5"
-                    MessageY="0.9" />
-            </local:CoachMarkControl.Steps>
-        </local:CoachMarkControl>
-    </AbsoluteLayout>
+    <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+        <Button x:Name="FirstButton" Text="First Button" />
+        <Button
+            x:Name="SecondButton"
+            Margin="0,20,0,0"
+            Text="Second Button" />
+    </StackLayout>
 </ContentPage>

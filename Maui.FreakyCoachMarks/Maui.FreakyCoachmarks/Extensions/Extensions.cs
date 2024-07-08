@@ -9,10 +9,13 @@ using Maui.FreakyCoachMarks.Platforms.MacCatalyst;
 #elif WINDOWS
 using Maui.FreakyCoachMarks.Platforms.Windows;
 #else
+
 using Maui.FreakyCoachMarks.Platforms.Dotnet;
+
 #endif
 
 namespace Maui.FreakyCoachMarks.Extensions;
+
 public static class Extensions
 {
     public static MauiAppBuilder UseFreakyCoachMarks(this MauiAppBuilder builder)

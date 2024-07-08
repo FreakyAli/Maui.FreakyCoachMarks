@@ -1,25 +1,25 @@
 ﻿using Android.Content;
+using Android.Graphics;
 using Android.Graphics.Drawables;
+using Android.OS;
+using Android.Renderscripts;
+using Android.Util;
 using Android.Views;
 using Android.Widget;
+using AndroidX.Annotations;
+using Java.Lang;
+using Maui.FreakyCoachMarks.Effects;
 using Microsoft.Maui.Controls.Compatibility.Platform.Android;
 using Microsoft.Maui.Controls.Platform;
 using Microsoft.Maui.Platform;
 using Color = Android.Graphics.Color;
-using Android.Graphics;
-using Android.OS;
-using Android.Util;
-using AndroidX.Annotations;
-using Android.Renderscripts;
-using Java.Lang;
-using View = Android.Views.View;
-using Paint = Android.Graphics.Paint;
 using Element = Android.Renderscripts.Element;
-using Maui.FreakyCoachMarks.Effects;
+using Paint = Android.Graphics.Paint;
+using View = Android.Views.View;
 
 namespace Maui.FreakyCoachMarks.Platforms.Android;
 
-public class BlurPlatformEffect : PlatformEffect
+internal class BlurPlatformEffect : PlatformEffect
 {
     public Context Context => Control?.Context;
 
@@ -154,14 +154,14 @@ public class BlurPlatformEffect : PlatformEffect
     }
 }
 
-public class BlurViewCanvas : Canvas
+internal class BlurViewCanvas : Canvas
 {
     public BlurViewCanvas(Bitmap bitmap) : base(bitmap)
     {
     }
 }
 
-public class PreDrawBlurController : IBlurController
+internal class PreDrawBlurController : IBlurController
 {
     public const int TRANSPARENT = 0;
 
@@ -367,7 +367,7 @@ public class PreDrawBlurController : IBlurController
     }
 }
 
-public interface IBlurController : IBlurViewFacade
+internal interface IBlurController : IBlurViewFacade
 {
     /**
   * Draws blurred content on given canvas
@@ -387,13 +387,13 @@ public interface IBlurController : IBlurViewFacade
     void Destroy();
 }
 
-public static class BlurViewDefaults
+internal static class BlurViewDefaults
 {
     public const float SCALE_FACTOR = 6f;
     public const float BLUR_RADIUS = 16f;
 }
 
-public class NoOpController : IBlurController
+internal class NoOpController : IBlurController
 {
     public bool Draw(Canvas canvas)
     {
@@ -434,7 +434,7 @@ public class NoOpController : IBlurController
     }
 }
 
-public class OnPreDrawListener : Java.Lang.Object, ViewTreeObserver.IOnPreDrawListener
+internal class OnPreDrawListener : Java.Lang.Object, ViewTreeObserver.IOnPreDrawListener
 {
     Action actionOnPreDraw;
 
@@ -450,7 +450,7 @@ public class OnPreDrawListener : Java.Lang.Object, ViewTreeObserver.IOnPreDrawLi
     }
 }
 
-public interface IBlurViewFacade
+internal interface IBlurViewFacade
 {
     IBlurViewFacade SetBlurEnabled(bool enabled);
 
@@ -463,7 +463,7 @@ public interface IBlurViewFacade
     IBlurViewFacade SetOverlayColor(Color overlayColor);
 }
 
-public interface IBlurAlgorithm
+internal interface IBlurAlgorithm
 {
     Bitmap Blur(Bitmap bitmapExportContext, float blurRadius);
 
@@ -478,7 +478,7 @@ public interface IBlurAlgorithm
     void Render(Canvas canvas, Bitmap bitmap);
 }
 
-public class BlurView : FrameLayout
+internal class BlurView : FrameLayout
 {
     private static string TAG = typeof(BlurView).Name;
 
@@ -607,7 +607,7 @@ public class BlurView : FrameLayout
     }
 }
 
-public class RenderEffectBlur : IBlurAlgorithm
+internal class RenderEffectBlur : IBlurAlgorithm
 {
     private readonly RenderNode node = new RenderNode("BlurViewNode");
 
@@ -673,7 +673,7 @@ public class RenderEffectBlur : IBlurAlgorithm
     }
 }
 
-public class RenderScriptBlur : IBlurAlgorithm
+internal class RenderScriptBlur : IBlurAlgorithm
 {
     private readonly Paint paint = new Paint(PaintFlags.FilterBitmap);
     private readonly RenderScript renderScript;
@@ -749,7 +749,7 @@ public class RenderScriptBlur : IBlurAlgorithm
     }
 }
 
-public class SizeScaler
+internal class SizeScaler
 {
     // Bitmap size should be divisible by ROUNDING_VALUE to meet stride requirement.
     // This will help avoiding an extra bitmap allocation when passing the bitmap to RenderScript for blur.
