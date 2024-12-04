@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.35013.160
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Samples", "Samples\Samples.csproj", "{813C77E8-043E-4401-923C-507EC04C39BB}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Maui.FreakyCoachMarks", "Maui.FreakyCoachmarks\Maui.FreakyCoachMarks.csproj", "{1EC448DF-C77D-4B23-9040-C4CBC8BDF837}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{813C77E8-043E-4401-923C-507EC04C39BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{813C77E8-043E-4401-923C-507EC04C39BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{813C77E8-043E-4401-923C-507EC04C39BB}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{813C77E8-043E-4401-923C-507EC04C39BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{813C77E8-043E-4401-923C-507EC04C39BB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{813C77E8-043E-4401-923C-507EC04C39BB}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{1EC448DF-C77D-4B23-9040-C4CBC8BDF837}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1EC448DF-C77D-4B23-9040-C4CBC8BDF837}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1EC448DF-C77D-4B23-9040-C4CBC8BDF837}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1EC448DF-C77D-4B23-9040-C4CBC8BDF837}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {313FBAC7-5465-4B05-8DDB-5AAA811191FB}
+	EndGlobalSection
+EndGlobal
